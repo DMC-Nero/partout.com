@@ -80,6 +80,26 @@ export function Header() {
 					</Link>
 
 					{user ? (
+<>
+
+	<Link href={'/profile'}>
+							<Button
+								variant="ghost"
+								size="icon"
+								// onClick={() => router.push('/auth/login')}
+							>
+						<Avatar className="h-8 w-8">
+										<AvatarImage
+											src={user.avatar || '/placeholder.svg'}
+											alt={user.name}
+										/>
+										<AvatarFallback>
+											{user.name.slice(0, 2).toUpperCase()}
+										</AvatarFallback>
+									</Avatar>
+							</Button>
+						</Link>
+					 {/* 
 						<DropdownMenu>
 							<DropdownMenuTrigger asChild>
 								<Button
@@ -123,6 +143,8 @@ export function Header() {
 								</DropdownMenuItem>
 							</DropdownMenuContent>
 						</DropdownMenu>
+*/}
+</>
 					) : (
 						<Link href={'/auth/login'}>
 							<Button
